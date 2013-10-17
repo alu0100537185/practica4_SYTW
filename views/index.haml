@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %title Piedra, Papel, tijeras con Haml
+  %body
+    %h1 Bienvenido al juego Piedra, Papel, Tijeras utilizando Haml.
+    %p
+      Para comenzar a jugar al clasico juego de Piedra, Papel, Tijeras seleccione una jugada:
+      = choose
+    %p= answer.gsub(',', '<br>')
