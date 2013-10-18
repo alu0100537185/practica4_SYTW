@@ -8,7 +8,7 @@ module RockPaperScissors
       def initialize(app = nil)
         @app = app
         @content_type = :html
-        @defeat = {'rock' => 'scissors', 'paper' => 'rock', 'scissors' => 'paper'}
+        @defeat = {'piedra' => 'tijera', 'papel' => 'piedra', 'tijera' => 'papel'}
         @throws = @defeat.keys
         @choose = @throws.map { |x| 
            %Q{ <li><a href="/?choice=#{x}">#{x}</a></li> }
