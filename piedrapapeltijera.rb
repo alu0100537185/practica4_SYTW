@@ -24,17 +24,17 @@ module RockPaperScissors
         computer_throw = @throws.sample
         player_throw = req.GET["choice"]
         answer = if !@throws.include?(player_throw)
-            "Choose one of the following:"
+            "Elige una de las siguientes opciones:"
           elsif player_throw == computer_throw
-            "You tied with the computer"
+            "Has empatado con la computadora"
           elsif computer_throw == @defeat[player_throw]
-            "Nicely done; #{player_throw} beats #{computer_throw}"
+            "Bien hecho; #{player_throw} vence a #{computer_throw}"
           else
-            "Ouch; #{computer_throw} beats #{player_throw}. Better luck next time!"
+            "Vaya; #{computer_throw} vence a #{player_throw}. Suerte para la proxima"
           end
 
 	if !answer.empty?
-          answer.insert(0, "<b>Your choice:</b> #{player_throw}, \n<b>Computer choice:</b> #{computer_throw}, ")
+          answer.insert(0, "<b>Tu eleccion:</b> #{player_throw}, \n<b>Eleccion de la computadora:</b> #{computer_throw}, ")
         end
         engine = Haml::Engine.new File.open("views/index.haml").read
         res = Rack::Response.new
